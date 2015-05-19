@@ -23,6 +23,7 @@ Class Message{
     public function __construct($oClient)
     {
         $this->client = $oClient;
+
     }
 
     public function Rules($methodName){
@@ -68,7 +69,7 @@ Class Message{
      * @throws \Exception
      * @throws \OTS\API\Exception
      */
-    public function Send($Recipient,$Body,$SenderID = '')
+    public function Send($Recipient,$Body,$SenderID = null)
     {
         try{
 
@@ -103,7 +104,7 @@ Class Message{
      * @throws \Exception
      * @throws \OTS\API\Exception
      */
-    public function SendBulkMessages($Recipient,$Body,$SenderID = '')
+    public function SendBulkMessages($Recipient,$Body,$SenderID = null)
     {
         try{
             $aParams = array(
@@ -170,8 +171,9 @@ Class Message{
      * @throws \Exception
      * @throws \OTS\API\Exception
      */
-    public function GetMessagesDetails($MessageID = '',$status = '',$SenderID = '',$DateFrom = '' ,$DateTo = '',$limit = '',$page = '')
+    public function GetMessagesDetails($MessageID = null,$status = null,$SenderID = null,$DateFrom = null ,$DateTo = null,$limit = null,$page = null)
     {
+
         try{
             $aParams = array(
                 'MessageID' =>$MessageID,
@@ -206,7 +208,7 @@ Class Message{
      * @throws \Exception
      * @throws \OTS\API\Exception
      */
-    public function GetMessagesReport($DateFrom = '' ,$DateTo = '')
+    public function GetMessagesReport($DateFrom = null ,$DateTo = null)
     {
         try{
             $aParams = array('DateFrom'=>$DateFrom,'DateTo'=>$DateTo);
