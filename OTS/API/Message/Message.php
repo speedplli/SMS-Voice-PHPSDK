@@ -35,7 +35,7 @@ Class Message{
                 'SenderID'  =>  'max_len,16',
             ),
             'SendBulkMessages' => array(
-                'Recipient' =>  'numeric|required|',
+                'Recipient' =>  'required',
                 'Body'      =>  'required',
                 'SenderID'  =>  'max_len,16',
             ),
