@@ -54,6 +54,10 @@ Class Message{
             'GetMessagesReport' => array(
                 'DateFrom'  =>  'max_len,55',
                 'DateFTo'   =>  'max_len,55',
+            ),
+            'GetScheduled'=> array(),
+            'StopScheduled' => array(
+                'Recipient' =>  'numeric|required|'
             )
         );
 
@@ -229,7 +233,56 @@ Class Message{
         }
     }
 
+    /**
+     * @return mixed
+     * @throws \Exception
+     * @throws \OTS\API\Exception
+     */
+    public function GetScheduled()
+    {
+        try{
+            $aParams = array();
+
+            $valid = GUMP::is_valid($aParams ,$this->Rules(__FUNCTION__));
+            if($valid === true)
+            {
+                return $this->client->Messages_GetScheduled($aParams);
+            }
+            else
+            {
+                return $valid[0];
+            }
+
+        }catch (Exception $e)
+        {
+            throw $e;
+        }
+    }
+
+    /**
+     * @return mixed
+     * @throws \Exception
+     * @throws \OTS\API\Exception
+     */
+    public function StopScheduled($MessageID)
+    {
+        try{
+            $aParams = array('MessageID'=>$MessageID);
+
+            $valid = GUMP::is_valid($aParams ,$this->Rules(__FUNCTION__));
+            if($valid === true)
+            {
+                return $this->client->Messages_StopScheduled($aParams);
+            }
+            else
+            {
+                return $valid[0];
+            }
+
+        }catch (Exception $e)
+        {
+            throw $e;
+        }
+    }
 }
-
-
 ?>
