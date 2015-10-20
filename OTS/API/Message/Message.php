@@ -3,7 +3,7 @@
 
 namespace OTS\API\Message;
 use OTS\API\Exception;
-use OTS\lib\GUMP\gump;
+use OTS\lib\GUMP\GUMP;
 
 /**
  * Class Message
@@ -35,7 +35,7 @@ Class Message{
                 'SenderID'  =>  'max_len,16',
             ),
             'SendBulkMessages' => array(
-                'Recipient' =>  'numeric|required|',
+                'Recipient' =>  'required',
                 'Body'      =>  'required',
                 'SenderID'  =>  'max_len,16',
             ),
@@ -54,6 +54,10 @@ Class Message{
             'GetMessagesReport' => array(
                 'DateFrom'  =>  'max_len,55',
                 'DateFTo'   =>  'max_len,55',
+            ),
+            'GetScheduled'=> array(),
+            'StopScheduled' => array(
+                'Recipient' =>  'numeric|required|'
             )
         );
 
@@ -229,7 +233,56 @@ Class Message{
         }
     }
 
+    /**
+     * @return mixed
+     * @throws \Exception
+     * @throws \OTS\API\Exception
+     */
+    public function GetScheduled()
+    {
+        try{
+            $aParams = array();
+
+            $valid = GUMP::is_valid($aParams ,$this->Rules(__FUNCTION__));
+            if($valid === true)
+            {
+                return $this->client->Messages_GetScheduled($aParams);
+            }
+            else
+            {
+                return $valid[0];
+            }
+
+        }catch (Exception $e)
+        {
+            throw $e;
+        }
+    }
+
+    /**
+     * @return mixed
+     * @throws \Exception
+     * @throws \OTS\API\Exception
+     */
+    public function StopScheduled($MessageID)
+    {
+        try{
+            $aParams = array('MessageID'=>$MessageID);
+
+            $valid = GUMP::is_valid($aParams ,$this->Rules(__FUNCTION__));
+            if($valid === true)
+            {
+                return $this->client->Messages_StopScheduled($aParams);
+            }
+            else
+            {
+                return $valid[0];
+            }
+
+        }catch (Exception $e)
+        {
+            throw $e;
+        }
+    }
 }
-
-
 ?>

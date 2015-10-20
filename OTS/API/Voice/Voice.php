@@ -1,13 +1,14 @@
 <?php
 
 namespace OTS\API\Voice;
-use OTS\lib\GUMP\gump;
+use OTS\lib\GUMP\GUMP;
 
-/**
- * Class Voice
- * @package OTS\API\Voice
- */
-    Class Voice {
+    /**
+    * Class Voice
+    * @package OTS\API\Voice
+    */
+    Class Voice
+    {
 
     /**
      * @var
@@ -29,7 +30,12 @@ use OTS\lib\GUMP\gump;
     	    $rules = array('GetCallIDStatus'=>array('CallID'=>'numeric|required') ,
                            'Call' =>array('Recipient'=>'numeric|required|min_len,12|max_len,12','Content'=>'required'),
                            'TTSCall' =>array('Recipient'=>'required|min_len,12|max_len,12|numeric','Content'=>'required','Language'=>'required'),
-                           'GetCallsDetails' =>array('CallID'=>'required|numeric','DateTo'=>'required','DateFrom'=>'required'));
+                           'GetCallsDetails' =>array('CallID'=>'required|numeric','DateTo'=>'required','DateFrom'=>'required'),
+                'GetScheduled' => array(),
+                'StopScheduled' => array(
+                    'CallID'    => 'required|numeric'
+                )
+            );
 		    return $rules["$methodName"];
         }
 
@@ -97,6 +103,33 @@ use OTS\lib\GUMP\gump;
                 return $valid[0];
         }
 
+        /**
+         * @return mixed
+         */
+        public function GetScheduled()
+        {
+            $aParams = array();
+            $valid = GUMP::is_valid($aParams ,$this->Rules(__FUNCTION__));
+            if($valid === true)
+            {
+                return $this->client->Voice_GetScheduledg();
 
-}
+            }else{
+                return $valid[0];
+            }
+        }
 
+        /**
+         * @param $CallID
+         * @return mixed
+         */
+        public function StopScheduled($CallID)
+        {
+            $aParams = array('CallID'=>$CallID);
+            $valid = GUMP::is_valid($aParams ,$this->Rules(__FUNCTION__));
+            if($valid===TRUE)
+                return $this->client->Voice_StopScheduled($aParams);
+            else
+                return $valid[0];
+        }
+    }
