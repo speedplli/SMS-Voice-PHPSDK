@@ -6,13 +6,13 @@
  * Time: 11:57 AM
  */
 
-namespace OTS\API\Checker;
-use OTS\API\Exception;
-use OTS\lib\GUMP\GUMP;
+namespace Unifonic\API\Checker;
+use Unifonic\API\Exception;
+use Unifonic\lib\GUMP\GUMP;
 
 /**
  * Class Account
- * @package OTS\API\Account
+ * @package Unifonic\API\Account
  */
 Class Checker
 {

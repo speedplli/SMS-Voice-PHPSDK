@@ -1,12 +1,12 @@
 <?php
 
-namespace OTS\API\Account;
-use OTS\API\Exception;
-use OTS\lib\GUMP\GUMP;
+namespace Unifonic\API\Account;
+use Unifonic\API\Exception;
+use Unifonic\lib\GUMP\GUMP;
 
 /**
  * Class Account
- * @package OTS\API\Account
+ * @package Unifonic\API\Account
  */
 Class Account
 {
@@ -77,7 +77,7 @@ Class Account
      * @param $SenderID
      * @return mixed
      * @throws \Exception
-     * @throws \OTS\API\Exception
+     * @throws \Unifonic\API\Exception
      */
     public function AddSenderID($SenderID)
     {

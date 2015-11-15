@@ -1,11 +1,11 @@
 <?php
 
-namespace OTS\API\Verify;
-use OTS\lib\GUMP\GUMP;
+namespace Unifonic\API\Verify;
+use Unifonic\lib\GUMP\GUMP;
 
 /**
  * Class Voice
- * @package OTS\API\Verify
+ * @package Unifonic\API\Verify
  */
 
 Class Verify{

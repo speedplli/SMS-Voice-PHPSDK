@@ -1,5 +1,5 @@
 <?php
-namespace OTS\lib\GUMP;
+namespace Unifonic\lib\GUMP;
 /**
  * GUMP - A fast, extensible PHP input validation class
  *

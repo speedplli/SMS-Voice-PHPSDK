@@ -1,10 +1,10 @@
 <?php
 
-namespace OTS\API;
-use OTS\API\Account\Account;
-use OTS\API\Message\Message;
-use OTS\API\Verify\Verify;
-use OTS\API\Voice\Voice;
+namespace Unifonic\API;
+use Unifonic\API\Account\Account;
+use Unifonic\API\Message\Message;
+use Unifonic\API\Verify\Verify;
+use Unifonic\API\Voice\Voice;
 
 class Client
 {

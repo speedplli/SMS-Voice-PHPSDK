@@ -1,13 +1,13 @@
 <?php
 
 
-namespace OTS\API\Message;
-use OTS\API\Exception;
-use OTS\lib\GUMP\GUMP;
+namespace Unifonic\API\Message;
+use Unifonic\API\Exception;
+use Unifonic\lib\GUMP\GUMP;
 
 /**
  * Class Message
- * @package OTS\API\Message
+ * @package Unifonic\API\Message
  */
 Class Message{
 
@@ -71,7 +71,7 @@ Class Message{
      * @param $SenderID
      * @return mixed
      * @throws \Exception
-     * @throws \OTS\API\Exception
+     * @throws \Unifonic\API\Exception
      */
     public function Send($Recipient,$Body,$SenderID = null)
     {
@@ -106,7 +106,7 @@ Class Message{
      * @param $SenderID
      * @return mixed
      * @throws \Exception
-     * @throws \OTS\API\Exception
+     * @throws \Unifonic\API\Exception
      */
     public function SendBulkMessages($Recipient,$Body,$SenderID = null)
     {
@@ -137,7 +137,7 @@ Class Message{
      * @param $MessageID
      * @return mixed
      * @throws \Exception
-     * @throws \OTS\API\Exception
+     * @throws \Unifonic\API\Exception
      */
     public function GetMessageIDStatus($MessageID)
     {
@@ -173,7 +173,7 @@ Class Message{
      * @param $page
      * @return mixed
      * @throws \Exception
-     * @throws \OTS\API\Exception
+     * @throws \Unifonic\API\Exception
      */
     public function GetMessagesDetails($MessageID = null,$status = null,$SenderID = null,$DateFrom = null ,$DateTo = null,$limit = null,$page = null)
     {
@@ -210,7 +210,7 @@ Class Message{
      * @param $DateTo
      * @return mixed
      * @throws \Exception
-     * @throws \OTS\API\Exception
+     * @throws \Unifonic\API\Exception
      */
     public function GetMessagesReport($DateFrom = null ,$DateTo = null)
     {
@@ -236,7 +236,7 @@ Class Message{
     /**
      * @return mixed
      * @throws \Exception
-     * @throws \OTS\API\Exception
+     * @throws \Unifonic\API\Exception
      */
     public function GetScheduled()
     {
@@ -262,7 +262,7 @@ Class Message{
     /**
      * @return mixed
      * @throws \Exception
-     * @throws \OTS\API\Exception
+     * @throws \Unifonic\API\Exception
      */
     public function StopScheduled($MessageID)
     {

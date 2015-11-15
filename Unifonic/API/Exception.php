@@ -1,5 +1,5 @@
 <?php
-namespace OTS\API;
+namespace Unifonic\API;
 
 
 class Exception extends \Exception

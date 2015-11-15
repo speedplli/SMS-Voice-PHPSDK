@@ -1,11 +1,11 @@
 <?php
 
-namespace OTS\API\Voice;
-use OTS\lib\GUMP\GUMP;
+namespace Unifonic\API\Voice;
+use Unifonic\lib\GUMP\GUMP;
 
     /**
     * Class Voice
-    * @package OTS\API\Voice
+    * @package Unifonic\API\Voice
     */
     Class Voice
     {
