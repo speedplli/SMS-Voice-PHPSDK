@@ -31,10 +31,9 @@ Class Account
 
         $rules = array(
             'GetBalance' => array(
-
             ),
             'AddSenderID' => array(
-                'SenderID'  =>  'numeric|required',
+                'SenderID'  =>  'required',
             ),
             'GetSenderIDStatus' => array(
                 'SenderID'  =>  'required',

@@ -2,7 +2,6 @@
 
 
     return array(
-        'AppSid' => '9_kwDSfe_k3DOcyjO_R40Fke6ubIKB',
+        'AppSid' => ['Your Rest AppSid'],
         'ApiURL' => 'http://api.unifonic.com/rest/',
-
     );

@@ -5,7 +5,7 @@ use Unifonic\API\Account\Account;
 use Unifonic\API\Message\Message;
 use Unifonic\API\Verify\Verify;
 use Unifonic\API\Voice\Voice;
-
+use Unifonic\API\Checker\Checker;
 class Client
 {
     /**
@@ -23,7 +23,10 @@ class Client
      */
     public $Account;
 
-
+    /**
+     * @var Account
+     */
+   public $Checker;
     /**
      * @var Verify
      */
@@ -45,6 +48,7 @@ class Client
         $this->Account  = new Account($this);
         $this->Voice    = new Voice($this);
         $this->Verify   = new Verify($this);
+        $this->Checker  = new Checker($this);
     }
 
     private function call(){

@@ -7,15 +7,13 @@
  */
 
 namespace Unifonic\API\Checker;
-use Unifonic\API\Exception;
 use Unifonic\lib\GUMP\GUMP;
 
 /**
  * Class Account
  * @package Unifonic\API\Account
  */
-Class Checker
-{
+Class Checker{
 
     /**
      * @var
