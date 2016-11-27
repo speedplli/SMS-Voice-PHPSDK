@@ -185,7 +185,7 @@ Class Message{
                 'SenderID'  => $SenderID,
                 'DateFrom'  => $DateFrom,
                 'DateTo'    => $DateTo,
-                'limit'     => $limit,
+                'Limit'     => $limit,
                 'page'      => $page
             );
 
