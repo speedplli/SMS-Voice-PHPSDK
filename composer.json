@@ -3,7 +3,7 @@
   "homepage": "https://github.com/speedplli/SMS-Voice-PHPSDK",
   "description": "A simple HTTP based restful API library will enable your apps to send text messages and make phone calls through [Unifonic Cloud Communication Platform]",
   "type": "library",
-  "license": "New BSD License",
+  "license": "BSD-2-Clause-FreeBSD",
   "require": {
     "wixel/gump": "^1.5"
   },
