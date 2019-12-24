@@ -1,0 +1,13 @@
+{
+  "name": "speedplli/sms-voice-phpsdk",
+  "description": "A simple HTTP based restful API library will enable your apps to send text messages and make phone calls through [Unifonic Cloud Communication Platform]",
+  "type": "library",
+  "require": {
+    "wixel/gump": "^1.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Unifonic\\": "src/"
+    }
+  }
+}
