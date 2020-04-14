@@ -5,6 +5,8 @@
   "type": "library",
   "license": "BSD-2-Clause-FreeBSD",
   "require": {
+    "ext-curl": "*",
+    "ext-json": "*",
     "wixel/gump": "^1.5"
   },
   "autoload": {

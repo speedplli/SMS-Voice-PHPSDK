@@ -8,36 +8,30 @@ use Unifonic\API\Verify\Verify;
 use Unifonic\API\Voice\Voice;
 use Unifonic\API\Checker\Checker;
 
+/**
+ * Class Client
+ *
+ * @property Message $Messages
+ * @property Voice   $Voice
+ * @property Account $Account
+ * @property Checker $Checker
+ * @property Verify  $Verify
+ * @property array   $params
+ *
+ * @package Unifonic\API
+ */
 class Client
 {
-    /**
-     * @var Message
-     */
     public $Messages;
-    /**
-     * @var Voice
-     */
     public $Voice;
-    /**
-     * @var Account
-     */
     public $Account;
-    /**
-     * @var Account
-     */
     public $Checker;
-    /**
-     * @var Verify
-     */
     public $Verify;
-    /**
-     * @param string $apiKey
-     * @param string $apiSecret
-     */
+    public $params;
+
     private $api_url;
     private $app_sid;
     private $action;
-    public  $params;
 
     public function __construct($api_url, $app_sid)
     {
